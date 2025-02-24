@@ -1,0 +1,2 @@
+# SimplePapiAPI
+将PlaceholderAPI的变量构建为GET接口的Paper插件
