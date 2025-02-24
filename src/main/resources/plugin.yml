@@ -1,0 +1,7 @@
+name: SimplePapiAPI
+version: '${project.version}'
+main: com.whitelu.simplepapiapi.SimplePapiAPI
+api-version: '1.20'
+depend: [PlaceholderAPI]
+authors: [whitelu]
+description: A simple HTTP API for PlaceholderAPI variables 
