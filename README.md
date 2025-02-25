@@ -7,7 +7,7 @@
 3. 在服务器本地访问`http://localhost:4747/`，若成功安装，它应该会显示`Missing parameters`
 ## 调用
 SimplePapiAPI构建的是HTTP服务器，其支持GET方法调用。  
-请求URL：http://localhost:4747  
+请求URL：`http://localhost:4747`
 请求方式：GET  
 | 参数名 | 必选 | 类型 | 说明 | 示例 |
 |--------|------|------|------|------|
@@ -15,9 +15,22 @@ SimplePapiAPI构建的是HTTP服务器，其支持GET方法调用。
 | variable | 是 | string | 要查询的变量列表 | ["%player_health%","%player_exp%"] |  
 
 **请注意，在请求前您必须将请求参数转义为URL编码后才可使用，否则将会报错 `400 Bad Request URISyntaxException thrown`**  
-请求示例：
-http://localhost:4747?target=fljlus&variable=["%player_health%","%player_exp%"]
-返回示例:
+
+#### 请求示例：  
+`http://localhost:4747?target=whitelu&variable=["%player_health%","%player_exp%"]`  
+
+转义为  
+
+`http://localhost:4747?target=whitelu&variable=%5B%25player_health%25%2C%25player_exp%25%5D`  
+#### 返回示例:
 ```json
 {"%player_health%": "20", "%player_exp%": "120"}
 ```
+
+## 附录：URL编码符号对照表：
+| 源符号 | 编码后 |
+|------|------|
+| [ | %5B |
+| ] | %5D |
+| % | %25 | 
+| , | %2C |
